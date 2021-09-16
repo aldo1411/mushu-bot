@@ -21,3 +21,12 @@ distube
     queue.autoplay = false
     queue.volume = 100
 })
+.on("empty", msg => {
+    msg.channel.send("Channel is empty. Leaving the channel")
+})
+.on("error", (msg, err) =>{
+    msg.channel.send("An error encountered: " + err)
+});
+module.exports = {
+    distube
+}
