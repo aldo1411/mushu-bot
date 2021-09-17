@@ -15,29 +15,40 @@ module.exports = (msg) => {
   let cmd = args.shift();
 
   switch (cmd) {
-    case "play":
+    case "play": 
+    case "p":
       playCommand(msg, args)
       break;
+
     case "skip":
+    case "s":
       skipCommand(msg)
       break
+
     case "queue":
       queueCommand(msg)
       break
+
     case "leave":
       leaveCommand(msg)
       break
+
     case "pause":
       pauseCommand(msg)
       break
+
     case "resume":
+    case "r":
       continueCommand(msg)
       break
+
     case "join":
+    case "j":
       joinCommand(msg)
       break
+
     default:
-      msg.channel.send(`fool`);
+      msg.channel.send(`fool ***${msg.author}***`);
       break;
   }
 }
